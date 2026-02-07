@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grok Style Ultra Glow</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+h1{
+    color :red;
+    border:outset;
+    /* border-width: 10px; border-color: red green blue yellow;  */
+    background-color:black;
+text-align: justify;
+}
+h2{
+    text-align: justify;
+     font-family: Copperplate, Papyrus, fantasy;
+}
+}
+        </style>
+</head>
+<body>
+    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga vero facereluptatum ut in recusandae perspiciatis laboriosam possimus eveniet voluptate magnam fuga non doloribus accusantium doloremque quaerat aliquam. Numquam?
+    Aliquid tenetur commodi enim quis cumque numquam repellat sapiente. Atque alias nesciunt qui reiciendis eveniet delectus minima, maiores omnis ipsum fugiat amet eum nihil voluptate? Incidunt minima aliquam odio nobis?
+    Amet, repellendus delectn, quasi veritatis voluptas minima ut suscipit sapiente reprehenderit facere!</h2>
+
+    <h1>ram naam ki loot h loot ske to loot</h1>
+<div id="stars"></div>
+
+<fieldset>
+  <input type="text">
+</fieldset>
+
+
+
+
+
+    <!-- EXTREME GROK LIGHT -->
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+
+    <!-- ABSTRACT SVG (G FEEL) -->
+    <svg class="bg-svg" viewBox="0 0 600 600">
+        <path d="
+            M300,40
+            C470,40 560,150 560,300
+            C560,450 470,560 300,560
+            C200,560 220,460 310,460
+            C420,460 470,410 470,300
+            C470,190 420,140 300,140
+            C160,140 60,240 60,300
+            C60,150 150,40 300,40
+        "
+        fill="none"
+        stroke="rgba(220,235,255,0.25)"
+        stroke-width="5"/>
+    </svg>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h1>Admin:-Mahendra_Rajput</h1>
+        <p>
+            Ultra-bright white & bluish glow using layered CSS lighting and Natural Sky animation.
+        </p>
+        <a href="https://accounts.x.ai/sign-in?redirect=grok-com" target="_blank"><button>click to open grok ai from where i taken the gui refrence</button></a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<!-- 
+<script>
+    const starsContainer = document.getElementById("stars");
+    const STAR_COUNT = 120; // ⭐ at least 100
+
+    for (let i = 0; i < STAR_COUNT; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+
+        // random position
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+
+        // random blink timing
+        const duration = Math.random() * 5 + 3; // 2s – 6s
+        const delay = Math.random() * 6;
+
+        star.style.animationDuration = duration + "s";
+        star.style.animationDelay = delay + "s";
+
+        // random size (normal range)
+        const size = Math.random() * 1.5 + 1;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        starsContainer.appendChild(star);
+    }
+</script>
+
+ -->
+
+<script>
+
+    const starsContainer = document.getElementById("stars");
+const isMobile = window.innerWidth < 768;
+
+    /* ⭐ AUTO STAR COUNT BASED ON SCREEN SIZE */
+    const STAR_DENSITY = 0.00025; // stars per pixel
+    const STAR_COUNT = Math.floor(window.innerWidth * window.innerHeight * STAR_DENSITY);
+
+    /* ⭐ CREATE STARS */
+    for (let i = 0; i < STAR_COUNT; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+
+        const size = Math.random() * 1.5 + 1;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+
+        const duration = Math.random() * 10 + 8; // slow blink
+        const delay = Math.random() * 10;
+
+        star.style.animationDuration = duration + "s";
+        star.style.animationDelay = delay + "s";
+
+        /* ⭐ SLOW DRIFT SPEED */
+        star.dataset.speed = Math.random() * 0.50 + 0.01;
+
+        starsContainer.appendChild(star);
+    }
+
+    /* ⭐ SLOW DRIFT MOVEMENT */
+    function driftStars() {
+        document.querySelectorAll(".star").forEach(star => {
+        
+        let left = parseFloat(star.style.left);
+left -= star.dataset.speed;
+if (left < -2) left = 102;
+star.style.left = left + "vw";
+
+        
+        
+        
+        });
+        requestAnimationFrame(driftStars);
+    }
+    driftStars();
+
+    /* ⭐ SHOOTING STAR (RARE EVENT) */
+    function createShootingStar() {
+        const shoot = document.createElement("div");
+        shoot.className = "shooting-star";
+
+        // shoot.style.top = Math.random() * 40 + "vh";
+        // shoot.style.left = Math.random() * 20 + "vw";
+
+
+
+        // shoot.style.top = "5vh";
+        // shoot.style.left = "30vw";
+
+        shoot.style.top = Math.random() * 40 + "vh";   // top half se niklega
+        shoot.style.left = Math.random() * 100 + "vw"; // kahi se bhi (left–right)
+
+
+
+
+
+        starsContainer.appendChild(shoot);
+
+        setTimeout(() => shoot.remove(), 5000);
+    }
+
+
+
+
+    // setInterval(() => {
+    //     if (Math.random() < 0.35) createShootingStar();
+    // }, 4000);
+
+
+// setInterval(() => {
+//     createShootingStar();
+//     createShootingStar();
+// }, 6000);
+
+
+setInterval(() => {
+    const count = Math.random() < 0.6 ? 1 : 2;
+
+    createShootingStar();
+
+    if (count === 2) {
+        setTimeout(createShootingStar, 400);
+    }
+// }, 5000);
+}, isMobile ? 10000 : 6000);
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

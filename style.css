@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+body {
+    height: 100vh;
+    background: #040507;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+/* BASE GLOW SETUP */
+.glow {
+    position: absolute;
+    top: 50%;
+    right: -300px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+/* CORE – EXTREMELY BRIGHT */
+.g1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle,
+        rgba(245,250,255,0.95) 0%,
+        rgba(210,225,255,0.75) 30%,
+        rgba(170,200,255,0.35) 55%,
+        transparent 70%);
+    filter: blur(110px);
+}
+
+/* SPREAD – SCREEN FLOOD */
+.g2 {
+    width: 1400px;
+    height: 1500px;
+    background: radial-gradient(circle,
+        rgba(220,235,255,0.55) 0%,
+        rgba(190,210,255,0.35) 45%,
+        transparent 75%);
+    filter: blur(200px);
+}
+
+/* AMBIENT – ATMOSPHERIC WASH */
+.g3 {
+    width: 2200px;
+    height: 2200px;
+    background: radial-gradient(circle,
+        rgba(200,220,255,0.28) 0%,
+        rgba(160,190,255,0.18) 55%,
+        transparent 85%);
+    filter: blur(280px);
+}
+
+/* SVG CURVE */
+.bg-svg {
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 650px;
+    height: 650px;
+    opacity: 0.95;
+}
+
+/* CONTENT */
+.content {
+    position: relative;
+    z-index: 10;
+    max-width: 520px;
+    padding: 90px;
+}
+
+.content h1 {
+    font-size: 46px;
+    margin-bottom: 18px;
+}
+
+.content p {
+    color: #cfd8ff;
+    font-size: 17px;
+    margin-bottom: 34px;
+}
+
+/* BUTTON */
+.content button {
+    padding: 14px 36px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #000;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.content button:hover {
+    background: #e6ecff;
+}
+
+
+/* =========================
+   RANDOM BLINKING STARS
+========================= */
+/* =========================
+   STAR FIELD SYSTEM
+========================= */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ⭐ NORMAL STARS */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 8px rgba(220,235,255,1);
+    animation: blink linear infinite;
+}
+
+/* ⭐ BLINK */
+@keyframes blink {
+    0%   { opacity: 0; }
+    15%  { opacity: 1; }
+    30%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* ⭐ SHOOTING STAR */
+.shooting-star {
+    position: absolute;
+    width: 240px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,1),
+        rgba(200,220,255,0.6),
+        transparent
+    );
+
+background: linear-gradient(
+    90deg,
+    rgba(255,255,255,1),
+   rgba(255,255,255,1),
+       rgba(255,255,255,1),
+    rgba(230,240,255,0.9),
+    rgba(200,220,255,0.4),
+    rgba(200,220,255,0.2),
+    transparent
+);
+
+
+
+
+    
+    transform: rotate(-20deg);
+    filter: blur(1px);
+    animation: shoot 6s ease-out forwards;
+}
+
+/* ⭐ SHOOTING ANIMATION */
+@keyframes shoot {
+    from {
+        transform: translate(0, 0) rotate(-50deg);
+        opacity: 1;
+    }
+    /* to {
+        transform: translate(600px, 300px) rotate(-20deg);
+        opacity: 0;
+    } */
+     to {
+        transform: translate(-1100px, 1200px) rotate(-50deg);
+        opacity: 0;
+    }
+
+
+
+
+}
